@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Mode Cafe Manager</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div>
+          <h1>Mode Cafe Manager</h1>
+          <p id="serviceLine">A cafe that shifts into diner and dinner-service modes without losing its soul.</p>
+        </div>
+        <div class="hud">
+          <div><span>Time</span><strong id="hudTime">5:00 AM</strong></div>
+          <div><span>Day</span><strong id="hudDay">Mon 1</strong></div>
+          <div><span>Mode</span><strong id="hudService">Early Cafe</strong></div>
+          <div><span>Cash</span><strong id="hudCash">$2,500</strong></div>
+          <div><span>Customers</span><strong id="hudCustomers">0</strong></div>
+          <div><span>Orders</span><strong id="hudOrders">0</strong></div>
+          <div><span>Avg Wait</span><strong id="hudWait">0m</strong></div>
+        </div>
+      </header>
+
+      <main class="shell">
+        <section class="stage">
+          <canvas id="gameCanvas" width="1152" height="720" aria-label="Playable cafe simulation"></canvas>
+          <div class="controls">
+            <button id="pauseBtn" type="button">Pause</button>
+            <button class="speed active" type="button" data-speed="1">1x</button>
+            <button class="speed" type="button" data-speed="2">2x</button>
+            <button class="speed" type="button" data-speed="4">4x</button>
+            <button class="speed" type="button" data-speed="8">8x</button>
+            <button id="hustleBtn" type="button">Hustle Shift</button>
+            <button id="trainBtn" type="button">Train Staff</button>
+            <button id="openCafeBtn" type="button">Open Cafe</button>
+            <button id="closeAdmissionBtn" type="button">Close Admission</button>
+            <button id="beginClosingBtn" type="button">Begin Closing</button>
+            <button id="autoOpenBtn" type="button">Auto Open: On</button>
+            <button id="autoCloseBtn" type="button">Auto Close: On</button>
+            <button id="deliveryBtn" type="button">Emergency Delivery</button>
+            <button id="saveBtn" type="button">Save</button>
+            <button id="loadBtn" type="button">Load</button>
+            <button id="resetBtn" type="button">Reset</button>
+          </div>
+        </section>
+
+        <aside class="side">
+          <div class="tabs" role="tablist" aria-label="Management panels">
+            <button class="tab active" type="button" data-tab="inspect">Inspect</button>
+            <button class="tab" type="button" data-tab="staff">Staff</button>
+            <button class="tab" type="button" data-tab="orders">Orders</button>
+            <button class="tab" type="button" data-tab="inventory">Inventory</button>
+            <button class="tab" type="button" data-tab="equipment">Equipment</button>
+            <button class="tab" type="button" data-tab="finances">Finances</button>
+            <button class="tab" type="button" data-tab="stats">Stats</button>
+          </div>
+          <div id="panel" class="panel"></div>
+          <section class="alerts">
+            <h2>Alerts</h2>
+            <div id="alerts"></div>
+          </section>
+        </aside>
+      </main>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
